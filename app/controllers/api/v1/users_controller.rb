@@ -1,4 +1,5 @@
 class Api::V1::UsersController < ApplicationController
+  wrap_parameters :user, include: [:username, :password]
 
   def index
     @users = User.all
