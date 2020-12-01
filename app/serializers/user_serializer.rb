@@ -3,6 +3,6 @@ class UserSerializer < ActiveModel::Serializer
   has_many :games
 
   def highScore
-    object.games.sort {|game| game.score}.first.score
+    object.games.length > 0 ? object.games.sort {|g| g.score}.first.score : 0
   end
 end
