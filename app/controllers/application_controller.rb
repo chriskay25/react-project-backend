@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::API
 
   def user_serializer(user)
-    high_score = user.games.sort {|g| g.score}.first.score
+    high_score = user.games.length > 0 ? user.games.sort {|g| g.score}.first.score : 0
     user_games = user.games.map do |g|
       {
         id: g.id,
