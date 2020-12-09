@@ -7,7 +7,7 @@ class Api::V1::GamesController < ApplicationController
 
   def create
     if logged_in?
-      game = current_user.games.build(game_params)
+      game = logged_in_user.games.build(game_params)
       if game.save
         render json: game, status: :ok
       else
@@ -16,6 +16,11 @@ class Api::V1::GamesController < ApplicationController
     else
       render json: {error: "You must be logged in to start a new game."}
     end
+  end
+
+  def high_scores
+    high_scores = Game.top_scores
+    render json: high_scores
   end
 
   private
