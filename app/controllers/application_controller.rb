@@ -2,6 +2,7 @@ class ApplicationController < ActionController::API
 
   def user_serializer(user)
     high_score = user.games.length > 0 ? user.games.sort {|g| g.score}.first.score : 0
+    high_scores = user.games.sort_by { |game| game.score }.reverse
     user_games = user.games.map do |g|
       {
         id: g.id,
@@ -15,7 +16,8 @@ class ApplicationController < ActionController::API
         username: user.username,
         password: user.password,
         games: user_games,
-        highScore: high_score
+        highScore: high_score,
+        highScores: high_scores.first(5)
       }
   end
 
