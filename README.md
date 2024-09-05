@@ -1,6 +1,10 @@
 # React Project Backend
 
-## Installation
+This is the backend of my final project for Flatiron School, though I've changed a lot since its first iteration. It's a simple game - control the player using arrow keys and try not to get hit by the incoming enemies.
+
+The frontend is available at https://github.com/chriskay25/react-project-frontend.git.
+
+### Installation
 Clone or fork the repository from https://github.com/chriskay25/react-project-backend.
 
 Change directory in your terminal:
@@ -11,30 +15,41 @@ Make sure bundler is installed and then run:
 
     $ bundle install
 
-Then run:
+Because the front-end of this app is controlled via a different repository, that repo must also be cloned/forked. Further instructions are included in the frontend repo's README.
 
-    $ rails db:migrate
+### Database Setup
 
-Then:
-    $ rails s
+Create and migrate the database:
 
-Because the front-end of this app is controlled via a different repository (https://github.com/chriskay25/react-project-frontend), this repo must also be cloned/forked. Further instructions are included in that repo's README.
+```
+rails db:create
+rails db:migrate
+```
+### Running the Server
+
+Start the Rails server: 
+`rails s`
 
 ## Usage
 
-This repo is used to store user login information as well as information on the games they have played. User interaction takes place in the frontend repo.
+This backend is responsible for handling data processing, business logic, and serving the API to the frontend built with React. This is where things like user login information as well as information on the games they have played is stored. User interaction takes place in the frontend repo.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/chriskay25/react-project-backend. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+1. Fork the repository
+2. Create a new branch (git checkout -b feature-branch)
+3. Commit your changes (git commit -m 'Add some feature')
+4. Push to the branch (git push origin feature-branch)
+5. Create a new Pull Request
 
-## Authors
-Chris Kay - @chriskay25
+Bug reports and pull requests are welcome on GitHub at https://github.com/chriskay25/react-project-backend. 
 
 ## License
 
 The web-app is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
-## Code of Conduct
+## Contact
 
-Everyone interacting in the bucket_list project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/chriskay25/bucket_list/CODE_OF_CONDUCT.md).
+Chris Kay - chriskay25@gmail.com
+
+Link to frontend repo: https://github.com/chriskay25/react-project-frontend.git
